@@ -42,7 +42,8 @@ class BookingController extends Controller
      */
     public function show(string $id)
     {
-        return BookingResource::collection(Booking::find($id));
+        $bookings = Booking::find($id);
+        return new BookingResource($bookings);
     }
 
     /**
