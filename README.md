@@ -1,4 +1,70 @@
-_**Booking API**_
+**CREATE USER & TOKEN** 
+
+Method: **POST**
+
+REQUEST: http://127.0.0.1:8000/api/v1/register/
+
+BODY:
+{
+
+    {
+      "name" : "admin",
+      "email" : "admin@gmail.com",
+      "password" : "admin@123"
+    }
+
+}
+
+RESPONSE:
+
+**TOKEN CREATED** 
+
+---------------------------------------
+
+**LOGIN USER & GET TOKEN**
+
+METHOD: **POST**
+
+REQUEST: http://127.0.0.1:8000/api/v1/login
+
+BODY:
+{
+
+    {
+        "email" : "admin@gmail.com",
+        "password" : "admin@123"
+    }
+
+}
+
+RESPONSE:
+**TOKEN GET**
+
+---------------------------------------
+
+**REVOKE TOKEN BASED ON ID & EMAIL**
+
+METHOD: **POST**
+
+REQUEST: http://127.0.0.1:8000/api/v1/revoke-token
+
+token_id : get from **personal_access_tokens** Table
+
+BODY: 
+{
+
+    {
+        "email" : "admin@gmail.com",
+        "token_id" : "2"
+    }
+
+}
+
+---------------------------------------
+
+_**BOOKING API**_
+
+---------------------------------------
 
 **1. Get All Booking Data** 
 
@@ -21,6 +87,8 @@ RESPONSE:
         }
     ]
 }
+
+---------------------------------------
 
 **2. Save Booking API**
 
@@ -48,6 +116,8 @@ RESPONSE:
 
 }
 
+---------------------------------------
+
 **3. Get ID wise Booking Data**
 
 Method: **GET**
@@ -64,6 +134,8 @@ RESPONSE:
     }
 
 }
+
+---------------------------------------
 
 **4. Update ID wise Booking Data**
 
@@ -91,6 +163,7 @@ RESPONSE:
 
 }
 
+---------------------------------------
 **5. Delete Booking using ID**
 
 Method: **Delete**
