@@ -9,8 +9,19 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
+// Limited Request Hit in Booking Route
+
+/**
+ * throttle:3 for default limit block
+ * 
+ * throttle:custom-booking-limit : For custom limit
+ */
+Route::middleware(['auth:sanctum', 'throttle:custom-booking-limit'])->group(function () {
+    Route::apiResource('v1/bookings', BookingController::class);
+});
+
 // Booking Route
-Route::apiResource('v1/bookings', BookingController::class)->middleware('auth:sanctum');
+// Route::apiResource('v1/bookings', BookingController::class)->middleware('auth:sanctum');
 
 // register user to create token 
 Route::post('v1/register', [AuthenticationController::class, 'register'])->name('register');

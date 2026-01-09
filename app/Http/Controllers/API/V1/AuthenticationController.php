@@ -15,16 +15,22 @@ class AuthenticationController extends Controller
         $request->validate([
             'name' => 'required|string',
             'email' => 'required|email',
-            'password' => 'required|min:4'
+            'password' => 'required|min:4',
+            'role' => 'required|string'
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'role' => $request->role
         ]);
 
-        return $user->createToken('api_token')->plainTextToken;
+        $token = $user->createToken('api_token')->plainTextToken;
+        return response()->json([
+            'user' => $user,
+            'token' => $token
+        ], 201);
     }
 
     public function login(Request $request)
