@@ -5,10 +5,23 @@ namespace App\Http\Controllers\API\V1;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\BookingResource;
 use App\Models\Booking;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
+    // Allow full access
+    public function before(User $user)
+    {
+        if ($user->role === "super admin") {
+            return true;
+        }
+    }
+    public function  __construct()
+    {
+        $this->authorizeResource(Booking::class);
+        // throw new \Exception('Not implemented');
+    }
     /**
      * Display a listing of the resource.
      */
