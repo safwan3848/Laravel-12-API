@@ -177,3 +177,17 @@ RESPONSE:
     "message": "Booking Deleted Successfully"
 
 }
+
+---------------------------------------
+**ADD SCRIBE PACKAGE FOR API DOCUMENTATION**
+
+**Installation Process**
+
+composer require knuckleswtf/scribe
+
+php artisan vendor:publish --tag=scribe-config
+
+**Using this command doc create**
+
+php artisan scribe:generate
+
