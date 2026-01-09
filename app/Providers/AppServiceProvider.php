@@ -24,9 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Add Policy
-        Gate::policy(Booking::class, BookingPolicy::class);
-        
         // Add Custom Rate Limit For Role Wise
         RateLimiter::for('custom-booking-limit', function ($request) {
             $user = $request->user();
@@ -38,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
                 return Limit::perMinute('3')->by($user->id);
             }
 
-            return Limit::perMinute(1)->by(optional($user)->id ?: $request->ip);
+            return Limit::perMinute(10)->by(optional($user)->id ?: $request->ip);
         });
     }
 }

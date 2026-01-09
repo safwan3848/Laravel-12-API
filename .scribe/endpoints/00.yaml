@@ -52,7 +52,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display a listing of the resource.'
+      title: ''
       description: ''
       authenticated: false
       deprecated: false
@@ -92,7 +92,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
+      title: ''
       description: ''
       authenticated: false
       deprecated: false
@@ -120,7 +120,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2026-01-09T13:29:58'
+        example: '2026-01-09T14:34:57'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -139,7 +139,7 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       title: consequatur
-      date: '2026-01-09T13:29:58'
+      date: '2026-01-09T14:34:57'
       status: consequatur
     fileParameters: []
     responses: []
@@ -159,7 +159,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display the specified resource.'
+      title: ''
       description: ''
       authenticated: false
       deprecated: false
@@ -172,14 +172,14 @@ endpoints:
         name: id
         description: 'The ID of the booking.'
         required: true
-        example: consequatur
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: consequatur
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -212,7 +212,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
+      title: ''
       description: ''
       authenticated: false
       deprecated: false
@@ -225,14 +225,14 @@ endpoints:
         name: id
         description: 'The ID of the booking.'
         required: true
-        example: consequatur
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: consequatur
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -252,7 +252,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2026-01-09T13:29:58'
+        example: '2026-01-09T14:34:57'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -271,7 +271,7 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       title: consequatur
-      date: '2026-01-09T13:29:58'
+      date: '2026-01-09T14:34:57'
       status: consequatur
     fileParameters: []
     responses: []
@@ -291,7 +291,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
+      title: ''
       description: ''
       authenticated: false
       deprecated: false
@@ -304,14 +304,14 @@ endpoints:
         name: id
         description: 'The ID of the booking.'
         required: true
-        example: consequatur
-        type: string
+        example: 1
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: consequatur
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

@@ -75,19 +75,19 @@
                                 <a href="#endpoints-GETapi-user">GET api/user</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-bookings">
-                                <a href="#endpoints-GETapi-v1-bookings">Display a listing of the resource.</a>
+                                <a href="#endpoints-GETapi-v1-bookings">GET api/v1/bookings</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-bookings">
-                                <a href="#endpoints-POSTapi-v1-bookings">Store a newly created resource in storage.</a>
+                                <a href="#endpoints-POSTapi-v1-bookings">POST api/v1/bookings</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-bookings--id-">
-                                <a href="#endpoints-GETapi-v1-bookings--id-">Display the specified resource.</a>
+                                <a href="#endpoints-GETapi-v1-bookings--id-">GET api/v1/bookings/{id}</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-PUTapi-v1-bookings--id-">
-                                <a href="#endpoints-PUTapi-v1-bookings--id-">Update the specified resource in storage.</a>
+                                <a href="#endpoints-PUTapi-v1-bookings--id-">PUT api/v1/bookings/{id}</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-v1-bookings--id-">
-                                <a href="#endpoints-DELETEapi-v1-bookings--id-">Remove the specified resource from storage.</a>
+                                <a href="#endpoints-DELETEapi-v1-bookings--id-">DELETE api/v1/bookings/{id}</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-register">
                                 <a href="#endpoints-POSTapi-v1-register">POST api/v1/register</a>
@@ -258,7 +258,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-GETapi-v1-bookings">Display a listing of the resource.</h2>
+                    <h2 id="endpoints-GETapi-v1-bookings">GET api/v1/bookings</h2>
 
 <p>
 </p>
@@ -384,7 +384,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-v1-bookings">Store a newly created resource in storage.</h2>
+                    <h2 id="endpoints-POSTapi-v1-bookings">POST api/v1/bookings</h2>
 
 <p>
 </p>
@@ -402,7 +402,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"title\": \"consequatur\",
-    \"date\": \"2026-01-09T13:29:58\",
+    \"date\": \"2026-01-09T14:34:57\",
     \"status\": \"consequatur\"
 }"
 </code></pre></div>
@@ -420,7 +420,7 @@ const headers = {
 
 let body = {
     "title": "consequatur",
-    "date": "2026-01-09T13:29:58",
+    "date": "2026-01-09T14:34:57",
     "status": "consequatur"
 };
 
@@ -525,10 +525,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-v1-bookings"
-               value="2026-01-09T13:29:58"
+               value="2026-01-09T14:34:57"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-09T13:29:58</code></p>
+<p>Must be a valid date. Example: <code>2026-01-09T14:34:57</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -544,7 +544,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
-                    <h2 id="endpoints-GETapi-v1-bookings--id-">Display the specified resource.</h2>
+                    <h2 id="endpoints-GETapi-v1-bookings--id-">GET api/v1/bookings/{id}</h2>
 
 <p>
 </p>
@@ -557,14 +557,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/v1/bookings/consequatur" \
+    --get "http://127.0.0.1:8000/api/v1/bookings/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/bookings/consequatur"
+    "http://127.0.0.1:8000/api/v1/bookings/1"
 );
 
 const headers = {
@@ -671,19 +671,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>integer</small>&nbsp;
  &nbsp;
  &nbsp;
-                <input type="text" style="display: none"
-                              name="id"                data-endpoint="GETapi-v1-bookings--id-"
-               value="consequatur"
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="GETapi-v1-bookings--id-"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the booking. Example: <code>consequatur</code></p>
+<p>The ID of the booking. Example: <code>1</code></p>
             </div>
                     </form>
 
-                    <h2 id="endpoints-PUTapi-v1-bookings--id-">Update the specified resource in storage.</h2>
+                    <h2 id="endpoints-PUTapi-v1-bookings--id-">PUT api/v1/bookings/{id}</h2>
 
 <p>
 </p>
@@ -696,12 +696,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8000/api/v1/bookings/consequatur" \
+    "http://127.0.0.1:8000/api/v1/bookings/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
     \"title\": \"consequatur\",
-    \"date\": \"2026-01-09T13:29:58\",
+    \"date\": \"2026-01-09T14:34:57\",
     \"status\": \"consequatur\"
 }"
 </code></pre></div>
@@ -709,7 +709,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/bookings/consequatur"
+    "http://127.0.0.1:8000/api/v1/bookings/1"
 );
 
 const headers = {
@@ -719,7 +719,7 @@ const headers = {
 
 let body = {
     "title": "consequatur",
-    "date": "2026-01-09T13:29:58",
+    "date": "2026-01-09T14:34:57",
     "status": "consequatur"
 };
 
@@ -811,15 +811,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>integer</small>&nbsp;
  &nbsp;
  &nbsp;
-                <input type="text" style="display: none"
-                              name="id"                data-endpoint="PUTapi-v1-bookings--id-"
-               value="consequatur"
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="PUTapi-v1-bookings--id-"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the booking. Example: <code>consequatur</code></p>
+<p>The ID of the booking. Example: <code>1</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -841,10 +841,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="PUTapi-v1-bookings--id-"
-               value="2026-01-09T13:29:58"
+               value="2026-01-09T14:34:57"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-01-09T13:29:58</code></p>
+<p>Must be a valid date. Example: <code>2026-01-09T14:34:57</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -860,7 +860,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
-                    <h2 id="endpoints-DELETEapi-v1-bookings--id-">Remove the specified resource from storage.</h2>
+                    <h2 id="endpoints-DELETEapi-v1-bookings--id-">DELETE api/v1/bookings/{id}</h2>
 
 <p>
 </p>
@@ -873,14 +873,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/v1/bookings/consequatur" \
+    "http://127.0.0.1:8000/api/v1/bookings/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/v1/bookings/consequatur"
+    "http://127.0.0.1:8000/api/v1/bookings/1"
 );
 
 const headers = {
@@ -971,15 +971,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>integer</small>&nbsp;
  &nbsp;
  &nbsp;
-                <input type="text" style="display: none"
-                              name="id"                data-endpoint="DELETEapi-v1-bookings--id-"
-               value="consequatur"
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="DELETEapi-v1-bookings--id-"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the booking. Example: <code>consequatur</code></p>
+<p>The ID of the booking. Example: <code>1</code></p>
             </div>
                     </form>
 

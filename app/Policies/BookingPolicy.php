@@ -8,6 +8,12 @@ use Illuminate\Auth\Access\Response;
 
 class BookingPolicy
 {
+    public function before(User $user)
+    {
+        if ($user->role === 'super admin') {
+            return true;
+        }
+    }
     /**
      * Determine whether the user can view any models.
      */
@@ -21,7 +27,7 @@ class BookingPolicy
      */
     public function view(User $user, Booking $booking): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -37,7 +43,7 @@ class BookingPolicy
      */
     public function update(User $user, Booking $booking): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -45,7 +51,7 @@ class BookingPolicy
      */
     public function delete(User $user, Booking $booking): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -53,7 +59,7 @@ class BookingPolicy
      */
     public function restore(User $user, Booking $booking): bool
     {
-        return false;
+        return true;
     }
 
     /**
